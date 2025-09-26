@@ -1,0 +1,45 @@
+publiccodeYmlVersion: 0.4.0
+name: SIASS
+url: https://github.com/ARPALit/SIASS/
+landingURL: https://github.com/ARPALit/SIASS
+platforms:
+  - web
+categories:
+  - data-collection
+usedBy:
+  - ARPAL - Agenzia per la Protezione dell'Ambiente Ligure
+developmentStatus: stable
+softwareType: standalone/web
+description:
+  en:
+    localisedName: SICAMPIONA
+    shortDescription: The SIASS system was developed to support the monitoring
+      network of surface and groundwater, enabling their visualization and
+      management.
+    longDescription: The SIASS system was developed to provide comprehensive support
+      for the surface and groundwater monitoring network, making it possible to
+      visualize, centralize, and efficiently manage the collected data.
+    features:
+      - Visualization and management of data from the surface and groundwater
+        monitoring network
+      - Centralization of data from the surface and groundwater monitoring
+        network
+  it:
+    localisedName: SIASS
+    shortDescription: Sistema per il monitoraggi delle acque superficiali e sotterranee
+    longDescription: Il sistema SIASS è stato sviluppato a supporto della rete di
+      monitoraggio delle acque superficiali e sotterranee per consentirne la
+      visualizzazione e la gestione.
+    features:
+      - Visualizzazione e gestione dei dati della rete di monitoraggio delle
+        acque superficiali e sotterranee
+      - Accentramento dati della rete di monitoraggio delle acque superficiali e
+        sotterranee
+legal:
+  license: AGPL-1.0-or-later
+maintenance:
+  type: contract
+localisation:
+  localisationReady: false
+  availableLanguages:
+    - it
