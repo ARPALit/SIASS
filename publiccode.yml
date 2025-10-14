@@ -1,45 +1,41 @@
 publiccodeYmlVersion: 0.4.0
 name: SIASS
 url: https://github.com/ARPALit/SIASS/
-landingURL: https://github.com/ARPALit/SIASS
+softwareVersion: "1.0"
+releaseDate: 2025-01-01
 platforms:
   - web
 categories:
   - data-collection
-usedBy:
-  - ARPAL - Agenzia per la Protezione dell'Ambiente Ligure
 developmentStatus: stable
 softwareType: standalone/web
 description:
-  en:
-    localisedName: SICAMPIONA
-    shortDescription: The SIASS system was developed to support the monitoring
-      network of surface and groundwater, enabling their visualization and
-      management.
-    longDescription: The SIASS system was developed to provide comprehensive support
-      for the surface and groundwater monitoring network, making it possible to
-      visualize, centralize, and efficiently manage the collected data.
-    features:
-      - Visualization and management of data from the surface and groundwater
-        monitoring network
-      - Centralization of data from the surface and groundwater monitoring
-        network
   it:
     localisedName: SIASS
     shortDescription: Sistema per il monitoraggi delle acque superficiali e sotterranee
-    longDescription: Il sistema SIASS è stato sviluppato a supporto della rete di
+    longDescription: " Il sistema SIASS è stato sviluppato a supporto della rete di
       monitoraggio delle acque superficiali e sotterranee per consentirne la
-      visualizzazione e la gestione.
+      visualizzazione e la gestione."
     features:
-      - Visualizzazione e gestione dei dati della rete di monitoraggio delle
-        acque superficiali e sotterranee
-      - Accentramento dati della rete di monitoraggio delle acque superficiali e
-        sotterranee
+      - Visualizzazione e gestione dei dati della rete di monitoraggio
+        delle         acque superficiali e sotterranee
+      - Accentramento dati della rete di monitoraggio delle acque superficiali
+        e         sotterranee
 legal:
   license: AGPL-1.0-or-later
 maintenance:
-  type: contract
+  type: internal
+  contacts:
+    - name: Marco Poddine
+      email: sii@arpal.liguria.it
+      phone: "0106437666"
 localisation:
   localisationReady: false
   availableLanguages:
     - it
+it:
+  countryExtensionVersion: "1.0"
+  conforme:
+    misureMinimeSicurezza: true
+  riuso:
+    codiceIPA: arlpa_ge
