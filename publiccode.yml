@@ -7,6 +7,8 @@ platforms:
   - web
 categories:
   - data-collection
+usedBy:
+  - ARPAL Agenzia Regionale Protezione Ambiente Ligure
 developmentStatus: stable
 softwareType: standalone/web
 description:
@@ -20,7 +22,7 @@ description:
       - Visualizzazione e gestione dei dati della rete di monitoraggio
         delle         acque superficiali e sotterranee
       - Accentramento dati della rete di monitoraggio delle acque superficiali
-        e         sotterranee
+        e sotterranee
 legal:
   license: AGPL-1.0-or-later
 maintenance:
@@ -29,6 +31,7 @@ maintenance:
     - name: Marco Poddine
       email: sii@arpal.liguria.it
       phone: "0106437666"
+      affiliation: ARPAL
 localisation:
   localisationReady: false
   availableLanguages:
