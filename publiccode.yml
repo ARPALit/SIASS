@@ -1,7 +1,7 @@
 publiccodeYmlVersion: 0.4.0
 name: SIASS
 url: https://github.com/ARPALit/SIASS/
-landingURL: https://arpal.liguria.it
+landingURL: https://www.arpal.liguria.it
 softwareVersion: "1.0"
 releaseDate: 2025-01-01
 platforms:
