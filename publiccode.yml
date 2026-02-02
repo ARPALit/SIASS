@@ -16,7 +16,7 @@ description:
   it:
     localisedName: SIASS
     shortDescription: Sistema per il monitoraggi delle acque superficiali e sotterranee
-    longDescription: Il sistema SIASS è stato sviluppato a supporto della rete di monitoraggio delle acque superficiali e sotterranee per consentirne la visualizzazione e la gestione.
+    longDescription: Il sistema SIASS è stato sviluppato da ARPAL a supporto della rete di monitoraggio delle acque superficiali e sotterranee per consentirne la visualizzazione e la gestione.
     features:
       - Visualizzazione e gestione dei dati della rete di monitoraggio delle acque superficiali e sotterranee
       - Accentramento dati della rete di monitoraggio delle acque superficiali e sotterranee
