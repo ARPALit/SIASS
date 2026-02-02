@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SIASSImportOrganoclorurati.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="StringaConnessioneDB" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">USER ID=SIASS;PASSWORD=SIASS;DATA SOURCE=localhost:1521/xe</Value>
+    </Setting>
+    <Setting Name="PercorsoFileDaImportare" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\Users\gianky\Documents\Visual Studio 2022\Projects\SIASS\SIASS\File\ImportazioniOrganoclorurati\</Value>
+    </Setting>
+    <Setting Name="PercorsoReportImportazione" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\Users\gianky\Documents\Visual Studio 2022\Projects\SIASS\SIASS\File\ImportazioniOrganoclorurati\Rapporti\</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

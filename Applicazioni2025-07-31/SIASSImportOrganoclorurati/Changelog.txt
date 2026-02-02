@@ -1,0 +1,11 @@
+##[8] 2025-01-17
+### Changed
+    - Il valore del campo parametro viene convertito in minuscolo prima dell'inserimento
+
+##[7] 2024-12-19
+### Added
+    - Changelog
+    - Verifica che l'unità di misura della singola riga CONC_UDM sia nella tabella SIAS_ORGANO_ANAG_PARAM
+
+The format is based on [Keep a Changelog]
+https://keepachangelog.com
