@@ -1,0 +1,3 @@
+Scaffold-DbContext "user id=SIASS;password=SIASS;data source=localhost/xe" Oracle.EntityFrameworkCore -OutputDir Model -UseDatabaseNames -Context SIASSContext -Force -NoPluralize  -t SIAS_ANOMALIE,SIAS_CONTROLLI_ANOMALIE,SIASS_STAZIONI,SIAS_STAZIONI_RETI,SIAS_GRANDEZZE_STAZIONE,SIAS_MISURAZIONI
+
+Dopo eliminare OnConfiguring da siasscontext.cs
