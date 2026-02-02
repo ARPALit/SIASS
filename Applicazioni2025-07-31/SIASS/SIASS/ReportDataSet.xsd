@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReportDataSet" targetNamespace="http://tempuri.org/ReportDataSet.xsd" xmlns:mstns="http://tempuri.org/ReportDataSet.xsd" xmlns="http://tempuri.org/ReportDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ReportDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ReportDataSet" msprop:Generator_UserDSName="ReportDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="StrumentiDataTable" msprop:Generator_TableClassName="StrumentiDataTableDataTable" msprop:Generator_TableVarName="tableStrumentiDataTable" msprop:Generator_TablePropName="StrumentiDataTable" msprop:Generator_RowDeletingName="StrumentiDataTableRowDeleting" msprop:Generator_RowChangingName="StrumentiDataTableRowChanging" msprop:Generator_RowEvHandlerName="StrumentiDataTableRowChangeEventHandler" msprop:Generator_RowDeletedName="StrumentiDataTableRowDeleted" msprop:Generator_UserTableName="StrumentiDataTable" msprop:Generator_RowChangedName="StrumentiDataTableRowChanged" msprop:Generator_RowEvArgName="StrumentiDataTableRowChangeEvent" msprop:Generator_RowClassName="StrumentiDataTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DescrizioneTipoStrumento" msprop:Generator_ColumnVarNameInTable="columnDescrizioneTipoStrumento" msprop:Generator_ColumnPropNameInRow="DescrizioneTipoStrumento" msprop:Generator_ColumnPropNameInTable="DescrizioneTipoStrumentoColumn" msprop:Generator_UserColumnName="DescrizioneTipoStrumento" type="xs:string" minOccurs="0" />
+              <xs:element name="NumeroDiSerie" msprop:Generator_ColumnVarNameInTable="columnNumeroDiSerie" msprop:Generator_ColumnPropNameInRow="NumeroDiSerie" msprop:Generator_ColumnPropNameInTable="NumeroDiSerieColumn" msprop:Generator_UserColumnName="NumeroDiSerie" type="xs:string" minOccurs="0" />
+              <xs:element name="Marca" msprop:Generator_ColumnVarNameInTable="columnMarca" msprop:Generator_ColumnPropNameInRow="Marca" msprop:Generator_ColumnPropNameInTable="MarcaColumn" msprop:Generator_UserColumnName="Marca" type="xs:string" minOccurs="0" />
+              <xs:element name="Modello" msprop:Generator_ColumnVarNameInTable="columnModello" msprop:Generator_ColumnPropNameInRow="Modello" msprop:Generator_ColumnPropNameInTable="ModelloColumn" msprop:Generator_UserColumnName="Modello" type="xs:string" minOccurs="0" />
+              <xs:element name="NumeroInventarioArpal" msprop:Generator_ColumnVarNameInTable="columnNumeroInventarioArpal" msprop:Generator_ColumnPropNameInRow="NumeroInventarioArpal" msprop:Generator_ColumnPropNameInTable="NumeroInventarioArpalColumn" msprop:Generator_UserColumnName="NumeroInventarioArpal" type="xs:string" minOccurs="0" />
+              <xs:element name="Caratteristiche" msprop:Generator_ColumnVarNameInTable="columnCaratteristiche" msprop:Generator_ColumnPropNameInRow="Caratteristiche" msprop:Generator_ColumnPropNameInTable="CaratteristicheColumn" msprop:Generator_UserColumnName="Caratteristiche" type="xs:string" minOccurs="0" />
+              <xs:element name="CodiceSistemaGestionale" msprop:Generator_ColumnVarNameInTable="columnCodiceSistemaGestionale" msprop:Generator_ColumnPropNameInRow="CodiceSistemaGestionale" msprop:Generator_ColumnPropNameInTable="CodiceSistemaGestionaleColumn" msprop:Generator_UserColumnName="CodiceSistemaGestionale" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

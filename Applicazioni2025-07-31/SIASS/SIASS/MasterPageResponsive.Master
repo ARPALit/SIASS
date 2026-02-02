@@ -1,0 +1,93 @@
+﻿<%-- 
+ * Nome del progetto: SIASS
+ * Copyright (C) 2025 Agenzia regionale per la protezione dell'ambiente ligure
+ *
+ * Questo programma è software libero: puoi ridistribuirlo e/o modificarlo
+ * secondo i termini della GNU Affero General Public License pubblicata dalla
+ * Free Software Foundation, sia la versione 3 della licenza, sia (a tua scelta)
+ * qualsiasi versione successiva.
+ *
+ * Questo programma è distribuito nella speranza che possa essere utile,
+ * ma SENZA ALCUNA GARANZIA; senza nemmeno la garanzia implicita di
+ * COMMERCIABILITÀ o IDONEITÀ PER UNO SCOPO PARTICOLARE. Vedi la
+ * GNU Affero General Public License per ulteriori dettagli.
+ *
+ * Dovresti aver ricevuto una copia della GNU Affero General Public License
+ * insieme a questo programma. In caso contrario, vedi <https://www.gnu.org/licenses/>.
+--%>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPageResponsive.master.cs" Inherits="SIASS.MasterPageResponsive" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/bootstrap.bundle.min.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container-fluid d-none d-lg-block">
+            <div class="row">
+                <div class="col-2">
+                    <asp:HyperLink ID="IntranetARPALHyperLink" runat="server" ImageUrl="~/img/Logo_Arpal.png"></asp:HyperLink>
+                </div>
+                <div class="col-4">
+                    <strong>SIASS</strong><br />
+                    Sistema Informativo Acque Sotterranee e Superficiali
+                </div>
+                <div class="col-2">
+                    <asp:Image ID="Image2" runat="server" ImageUrl="~/img/Logo_Alcotra.png" />
+                </div>
+                <div class="col-4 text-end small">
+                    <asp:Label ID="LoginOperatoreCollegatoLabel" runat="server" Text="operatore"></asp:Label>&nbsp;<asp:HyperLink
+                        ID="SelezioneProfiloHyperLink" runat="server" NavigateUrl="~/SelezioneProfilo.aspx"
+                        ToolTip="Fare clic qui per cambiare il profilo">[Profilo]</asp:HyperLink><asp:Label
+                            ID="ProfiloLabel" runat="server" Text="[Profilo]"></asp:Label>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <asp:HyperLink ID="PaginaPrincipaleHyperLink" runat="server" CssClass="nav-link">Stazioni</asp:HyperLink>
+                    </li>
+                    <li class="nav-item">
+                        <asp:HyperLink ID="ElencoSitiHyperLink" runat="server" CssClass="nav-link">Siti</asp:HyperLink>
+                    </li>
+                    <li class="nav-item">
+                        <asp:HyperLink ID="UltimoInterventoUltimaMisurazioneHyperLink" runat="server" CssClass="nav-link">Ultimo intervento/misurazione</asp:HyperLink>
+                    </li>
+                    <li class="nav-item">
+                        <asp:HyperLink ID="PacchettiHyperLink" runat="server" CssClass="nav-link">Pacchetti ALIMS</asp:HyperLink>
+                    </li>
+                    <li class="nav-item">
+                        <asp:HyperLink ID="ElencoInterventiPeriodoHyperLink" runat="server" CssClass="nav-link">Interventi</asp:HyperLink>
+                    </li>
+                    <li class="nav-item">
+                        <asp:HyperLink ID="OrganocloruratiHyperLink" runat="server" CssClass="nav-link">Importazione dati</asp:HyperLink>
+                    </li>
+                    <li class="nav-item">
+                        <asp:HyperLink ID="ReportisticaHyperLink" runat="server" CssClass="nav-link" Target="_blank">Reportistica</asp:HyperLink>
+                    </li>
+                    <li class="nav-item">
+                        <asp:HyperLink ID="ConfigurazioneHyperLink" runat="server" CssClass="nav-link">Configurazione</asp:HyperLink>
+                    </li>
+                    <li class="nav-item">
+                        <asp:HyperLink ID="DatasetHyperLink" runat="server" CssClass="nav-link" Target="_blank">Dataset</asp:HyperLink>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
