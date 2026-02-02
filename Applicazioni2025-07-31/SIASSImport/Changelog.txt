@@ -1,0 +1,6 @@
+﻿##[1.0.1] - 2022-02-04
+### Added
+    - Gestione delle misurazioni negative
+
+##[1.0.0] - 2021-12-21
+Prima versione

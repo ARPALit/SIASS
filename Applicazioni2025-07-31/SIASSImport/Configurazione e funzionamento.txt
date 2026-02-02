@@ -1,0 +1,39 @@
+﻿*** Configurazione ***
+- CartellaImportazione: percorso della cartella che contiene i file CSV da importare.
+- CartellaArchivio: percorso della cartella dove sono archiviati i file importati.
+- SeIntestazioneCSV: se True indica che nel file CSV è presente l'intestazione con i nomi dei campi; valori ammessi: True/False.
+- CarattereDelimitatoreCampiCSV: definisce il carattere usato per delimitare i campi nel file CSV; tipicamente la virgola o il punto e virgola.
+- CarattereCommentiCSV: il carattere usato per indicare i commenti file CSV; tipicamente il cancelletto (#).
+- SeCampiCSVRacchiusiTraVirgolette: se True indica che nel file CSV i campi sono racchiusi tra virgolette ("); valori ammessi: True/False.
+- SeparatoreDecimaliMisurazioneCSV: il carattere usato nel file CSV come separatore dei decimali per il valore della misurazione.
+- FormatoDataCSV: formato della data nel file CSV; è utilizzato per farne il parsing e convertirla un un oggetto di tipo DateTime
+(https://docs.microsoft.com/it-it/dotnet/standard/base-types/custom-date-and-time-format-strings)
+- SeInviareEmailFineEsportazione: se True indica che a fine dell'esecuzione del programma è inviata una email di riepilogo; valori ammessi: True/False.
+- SeInviareEmailErrore: se True indica che a fine dell'esecuzione del programma è inviata una email di riepilogo degli errori; valori ammessi: True/False.
+- DestinatariEmail: elenco dei destinatari email sepatati da punto e virgola.
+- ServerSMTP: nome del server SMTP utilizzato per l'invio delle email.
+- PortaServerSMTP: numero porta del server SMTP.
+- SeAbilitareSSLPerSMTPServer: se True indica indica di abilitare l'SSL nella connessione col server SMTP; valori ammessi: True/False.
+- NomeUtenteSMTP: nome utente per l'autenticazione col server SMTP.
+- PasswordUtenteSMTP: password utente per l'autenticazione col server SMTP.
+- IndirizzoMittenteEmail: indirizzo indicato come mittente delle email.
+- StringaConnessioneDB: stringa di connessione alla base dati.
+- SoloVerificaDati: non è fatto nessun aggiornamento del DB ma solo verificati i dati del CVS e la corrispondenza con i codici sensore presenti nel db; valori ammessi: True/False.
+
+*** Log ***
+L'applicazione scrive:
+- Un log nella cartella Log con livello di dettagli definibile nel file NLog.config
+https://github.com/nlog/NLog/wiki/Configuration-file#log-levels
+- Un rapporto per ogni elaborazione nella cartella Log\Rapporti
+
+*** Funzionamento ***
+- Lettura del file CVS dalla CartellaImportazione.
+- Parsing del file con registrazione nel log delle righe non valide.
+- Associazione a ogni misura della grandezza stazione corrispondente in base al codice del sensore con registrazione nel log dei codici 
+non corrispondenti.
+- Eventuale conversione del valore in quello previsto per la grandezza cui è associato utilizzando il coefficiente di conversione 
+dell'unità di misura definito nella tabella SIAS_SENSORI
+- Inserimento della misura nella base dati; se la stessa misurazione è già presente (in base alla data di rilevazione) viene sovrascritta 
+solo se non ancora validata.
+- Archiviazione file e rapporto esecuzione.
+- Invio email rapporto.
