@@ -1,0 +1,2842 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Logon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sApplication" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bTrusted" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LogonResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicationList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nUserId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicationListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApplicationListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetUserListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUserList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllUserListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllUserListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUserListDate">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllUserListDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllUserListDateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAppUserProfiles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sApplication" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAppUserProfilesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAppUserProfilesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicationUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sApplication" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicationUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApplicationUsersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUtentiSostituti">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nUserId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUtentiSostitutiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUtentiSostitutiResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUtentiSostituitiAppl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sApplicazione" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUtentiSostituitiApplResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUtentiSostituitiApplResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResponsabiliStrutture">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetResponsabiliStruttureResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetResponsabiliStruttureResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResponsabiliStruttureConDate">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetResponsabiliStruttureConDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetResponsabiliStruttureConDateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStruttureConDate">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetStruttureConDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStruttureConDateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStruttureUtente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nUserId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStruttureUtenteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStruttureUtenteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUtentiStruttura">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdStruttura" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUtentiStrutturaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUtentiStrutturaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllStruttureUtente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nUserId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllStruttureUtenteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllStruttureUtenteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllStruttureUtenteConDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nUserId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllStruttureUtenteConDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllStruttureUtenteConDateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStruttureSenzaResponsabile">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetStruttureSenzaResponsabileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStruttureSenzaResponsabileResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserDepAppProfiles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sApplication" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserDepAppProfilesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserDepAppProfilesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUtentiStruttura">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdStruttura" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUtentiStrutturaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllUtentiStrutturaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUtentiInterniStruttura">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdStruttura" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUtentiInterniStrutturaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllUtentiInterniStrutturaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUtentiInterniStrutturaPerData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdStruttura" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUtentiInterniStrutturaPerDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllUtentiInterniStrutturaPerDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUtentiPerFunzione">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCodElFunz" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUtentiPerFunzioneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUtentiPerFunzioneResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFunzioniPerUtente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdUtente" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFunzioniPerUtenteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFunzioniPerUtenteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUtentePerCodice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdUtente" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUtentePerCodiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUtentePerCodiceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPosOrgStrutOrg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdPosOrg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPosOrgStrutOrgResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPosOrgStrutOrgResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllStrutture">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllStruttureResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllStruttureResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllStrutture_Tutte">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllStrutture_TutteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllStrutture_TutteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUffici">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllUfficiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllUfficiResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSedeUtentePerCodice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdUtente" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSedeUtentePerCodiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSedeUtentePerCodiceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSottopostiDaResponsabile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdUtente" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSottopostiDaResponsabileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSottopostiDaResponsabileResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllSedi">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllSediResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllSediResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStruttureSede">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdSede" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStruttureSedeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStruttureSedeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllStruttureResponsabile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nUserId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllStruttureResponsabileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllStruttureResponsabileResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="int" type="s:int" />
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LogonSoapIn">
+    <wsdl:part name="parameters" element="tns:Logon" />
+  </wsdl:message>
+  <wsdl:message name="LogonSoapOut">
+    <wsdl:part name="parameters" element="tns:LogonResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApplicationList" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApplicationListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserList" />
+  </wsdl:message>
+  <wsdl:message name="GetUserListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllUserList" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllUserListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserListDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllUserListDate" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserListDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllUserListDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAppUserProfilesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAppUserProfiles" />
+  </wsdl:message>
+  <wsdl:message name="GetAppUserProfilesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAppUserProfilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApplicationUsers" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApplicationUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentiSostitutiSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUtentiSostituti" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentiSostitutiSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUtentiSostitutiResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentiSostituitiApplSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUtentiSostituitiAppl" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentiSostituitiApplSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUtentiSostituitiApplResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResponsabiliStruttureSoapIn">
+    <wsdl:part name="parameters" element="tns:GetResponsabiliStrutture" />
+  </wsdl:message>
+  <wsdl:message name="GetResponsabiliStruttureSoapOut">
+    <wsdl:part name="parameters" element="tns:GetResponsabiliStruttureResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResponsabiliStruttureConDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetResponsabiliStruttureConDate" />
+  </wsdl:message>
+  <wsdl:message name="GetResponsabiliStruttureConDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetResponsabiliStruttureConDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStruttureConDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStruttureConDate" />
+  </wsdl:message>
+  <wsdl:message name="GetStruttureConDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStruttureConDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStruttureUtenteSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStruttureUtente" />
+  </wsdl:message>
+  <wsdl:message name="GetStruttureUtenteSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStruttureUtenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentiStrutturaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUtentiStruttura" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentiStrutturaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUtentiStrutturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStruttureUtenteSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllStruttureUtente" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStruttureUtenteSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllStruttureUtenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStruttureUtenteConDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllStruttureUtenteConDate" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStruttureUtenteConDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllStruttureUtenteConDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStruttureSenzaResponsabileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStruttureSenzaResponsabile" />
+  </wsdl:message>
+  <wsdl:message name="GetStruttureSenzaResponsabileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStruttureSenzaResponsabileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDepAppProfilesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserDepAppProfiles" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDepAppProfilesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserDepAppProfilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUtentiStrutturaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllUtentiStruttura" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUtentiStrutturaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllUtentiStrutturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUtentiInterniStrutturaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllUtentiInterniStruttura" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUtentiInterniStrutturaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllUtentiInterniStrutturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUtentiInterniStrutturaPerDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllUtentiInterniStrutturaPerData" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUtentiInterniStrutturaPerDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllUtentiInterniStrutturaPerDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentiPerFunzioneSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUtentiPerFunzione" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentiPerFunzioneSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUtentiPerFunzioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFunzioniPerUtenteSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFunzioniPerUtente" />
+  </wsdl:message>
+  <wsdl:message name="GetFunzioniPerUtenteSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFunzioniPerUtenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentePerCodiceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUtentePerCodice" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentePerCodiceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUtentePerCodiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPosOrgStrutOrgSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPosOrgStrutOrg" />
+  </wsdl:message>
+  <wsdl:message name="GetPosOrgStrutOrgSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPosOrgStrutOrgResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStruttureSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllStrutture" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStruttureSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllStruttureResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStrutture_TutteSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllStrutture_Tutte" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStrutture_TutteSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllStrutture_TutteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUfficiSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllUffici" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUfficiSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllUfficiResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSedeUtentePerCodiceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSedeUtentePerCodice" />
+  </wsdl:message>
+  <wsdl:message name="GetSedeUtentePerCodiceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSedeUtentePerCodiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSottopostiDaResponsabileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSottopostiDaResponsabile" />
+  </wsdl:message>
+  <wsdl:message name="GetSottopostiDaResponsabileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSottopostiDaResponsabileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSediSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllSedi" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSediSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllSediResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStruttureSedeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStruttureSede" />
+  </wsdl:message>
+  <wsdl:message name="GetStruttureSedeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStruttureSedeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStruttureResponsabileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllStruttureResponsabile" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStruttureResponsabileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllStruttureResponsabileResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogonHttpGetIn">
+    <wsdl:part name="sUserName" type="s:string" />
+    <wsdl:part name="sPassword" type="s:string" />
+    <wsdl:part name="sApplication" type="s:string" />
+    <wsdl:part name="bTrusted" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LogonHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationListHttpGetIn">
+    <wsdl:part name="nUserId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationListHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetUserListHttpGetIn" />
+  <wsdl:message name="GetUserListHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserListHttpGetIn" />
+  <wsdl:message name="GetAllUserListHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserListDateHttpGetIn" />
+  <wsdl:message name="GetAllUserListDateHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAppUserProfilesHttpGetIn">
+    <wsdl:part name="nUserId" type="s:string" />
+    <wsdl:part name="sApplication" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAppUserProfilesHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationUsersHttpGetIn">
+    <wsdl:part name="sApplication" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationUsersHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentiSostitutiHttpGetIn">
+    <wsdl:part name="nUserId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentiSostitutiHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentiSostituitiApplHttpGetIn">
+    <wsdl:part name="nUserId" type="s:string" />
+    <wsdl:part name="sApplicazione" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentiSostituitiApplHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetResponsabiliStruttureHttpGetIn" />
+  <wsdl:message name="GetResponsabiliStruttureHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetResponsabiliStruttureConDateHttpGetIn" />
+  <wsdl:message name="GetResponsabiliStruttureConDateHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetStruttureConDateHttpGetIn" />
+  <wsdl:message name="GetStruttureConDateHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetStruttureUtenteHttpGetIn">
+    <wsdl:part name="nUserId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStruttureUtenteHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentiStrutturaHttpGetIn">
+    <wsdl:part name="nIdStruttura" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentiStrutturaHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStruttureUtenteHttpGetIn">
+    <wsdl:part name="nUserId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStruttureUtenteHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStruttureUtenteConDateHttpGetIn">
+    <wsdl:part name="nUserId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStruttureUtenteConDateHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetStruttureSenzaResponsabileHttpGetIn" />
+  <wsdl:message name="GetStruttureSenzaResponsabileHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDepAppProfilesHttpGetIn">
+    <wsdl:part name="nUserId" type="s:string" />
+    <wsdl:part name="sApplication" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDepAppProfilesHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUtentiStrutturaHttpGetIn">
+    <wsdl:part name="nIdStruttura" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUtentiStrutturaHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUtentiInterniStrutturaHttpGetIn">
+    <wsdl:part name="nIdStruttura" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUtentiInterniStrutturaHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUtentiInterniStrutturaPerDataHttpGetIn">
+    <wsdl:part name="nIdStruttura" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUtentiInterniStrutturaPerDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentiPerFunzioneHttpGetIn">
+    <wsdl:part name="sCodElFunz" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentiPerFunzioneHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetFunzioniPerUtenteHttpGetIn">
+    <wsdl:part name="nIdUtente" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFunzioniPerUtenteHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentePerCodiceHttpGetIn">
+    <wsdl:part name="nIdUtente" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentePerCodiceHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetPosOrgStrutOrgHttpGetIn">
+    <wsdl:part name="nIdPosOrg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPosOrgStrutOrgHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStruttureHttpGetIn" />
+  <wsdl:message name="GetAllStruttureHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStrutture_TutteHttpGetIn" />
+  <wsdl:message name="GetAllStrutture_TutteHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUfficiHttpGetIn" />
+  <wsdl:message name="GetAllUfficiHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetSedeUtentePerCodiceHttpGetIn">
+    <wsdl:part name="nIdUtente" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSedeUtentePerCodiceHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetSottopostiDaResponsabileHttpGetIn">
+    <wsdl:part name="nIdUtente" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSottopostiDaResponsabileHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSediHttpGetIn" />
+  <wsdl:message name="GetAllSediHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetStruttureSedeHttpGetIn">
+    <wsdl:part name="nIdSede" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStruttureSedeHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStruttureResponsabileHttpGetIn">
+    <wsdl:part name="nUserId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStruttureResponsabileHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="LogonHttpPostIn">
+    <wsdl:part name="sUserName" type="s:string" />
+    <wsdl:part name="sPassword" type="s:string" />
+    <wsdl:part name="sApplication" type="s:string" />
+    <wsdl:part name="bTrusted" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LogonHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationListHttpPostIn">
+    <wsdl:part name="nUserId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationListHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetUserListHttpPostIn" />
+  <wsdl:message name="GetUserListHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserListHttpPostIn" />
+  <wsdl:message name="GetAllUserListHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserListDateHttpPostIn" />
+  <wsdl:message name="GetAllUserListDateHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAppUserProfilesHttpPostIn">
+    <wsdl:part name="nUserId" type="s:string" />
+    <wsdl:part name="sApplication" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAppUserProfilesHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationUsersHttpPostIn">
+    <wsdl:part name="sApplication" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationUsersHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentiSostitutiHttpPostIn">
+    <wsdl:part name="nUserId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentiSostitutiHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentiSostituitiApplHttpPostIn">
+    <wsdl:part name="nUserId" type="s:string" />
+    <wsdl:part name="sApplicazione" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentiSostituitiApplHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetResponsabiliStruttureHttpPostIn" />
+  <wsdl:message name="GetResponsabiliStruttureHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetResponsabiliStruttureConDateHttpPostIn" />
+  <wsdl:message name="GetResponsabiliStruttureConDateHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetStruttureConDateHttpPostIn" />
+  <wsdl:message name="GetStruttureConDateHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetStruttureUtenteHttpPostIn">
+    <wsdl:part name="nUserId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStruttureUtenteHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentiStrutturaHttpPostIn">
+    <wsdl:part name="nIdStruttura" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentiStrutturaHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStruttureUtenteHttpPostIn">
+    <wsdl:part name="nUserId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStruttureUtenteHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStruttureUtenteConDateHttpPostIn">
+    <wsdl:part name="nUserId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStruttureUtenteConDateHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetStruttureSenzaResponsabileHttpPostIn" />
+  <wsdl:message name="GetStruttureSenzaResponsabileHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDepAppProfilesHttpPostIn">
+    <wsdl:part name="nUserId" type="s:string" />
+    <wsdl:part name="sApplication" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDepAppProfilesHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUtentiStrutturaHttpPostIn">
+    <wsdl:part name="nIdStruttura" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUtentiStrutturaHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUtentiInterniStrutturaHttpPostIn">
+    <wsdl:part name="nIdStruttura" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUtentiInterniStrutturaHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUtentiInterniStrutturaPerDataHttpPostIn">
+    <wsdl:part name="nIdStruttura" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUtentiInterniStrutturaPerDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentiPerFunzioneHttpPostIn">
+    <wsdl:part name="sCodElFunz" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentiPerFunzioneHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetFunzioniPerUtenteHttpPostIn">
+    <wsdl:part name="nIdUtente" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFunzioniPerUtenteHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentePerCodiceHttpPostIn">
+    <wsdl:part name="nIdUtente" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUtentePerCodiceHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetPosOrgStrutOrgHttpPostIn">
+    <wsdl:part name="nIdPosOrg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPosOrgStrutOrgHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStruttureHttpPostIn" />
+  <wsdl:message name="GetAllStruttureHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStrutture_TutteHttpPostIn" />
+  <wsdl:message name="GetAllStrutture_TutteHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUfficiHttpPostIn" />
+  <wsdl:message name="GetAllUfficiHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetSedeUtentePerCodiceHttpPostIn">
+    <wsdl:part name="nIdUtente" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSedeUtentePerCodiceHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetSottopostiDaResponsabileHttpPostIn">
+    <wsdl:part name="nIdUtente" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSottopostiDaResponsabileHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSediHttpPostIn" />
+  <wsdl:message name="GetAllSediHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetStruttureSedeHttpPostIn">
+    <wsdl:part name="nIdSede" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStruttureSedeHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStruttureResponsabileHttpPostIn">
+    <wsdl:part name="nUserId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStruttureResponsabileHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:portType name="GsoWebServicesSoap">
+    <wsdl:operation name="Logon">
+      <wsdl:input message="tns:LogonSoapIn" />
+      <wsdl:output message="tns:LogonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationList">
+      <wsdl:input message="tns:GetApplicationListSoapIn" />
+      <wsdl:output message="tns:GetApplicationListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserList">
+      <wsdl:input message="tns:GetUserListSoapIn" />
+      <wsdl:output message="tns:GetUserListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserList">
+      <wsdl:input message="tns:GetAllUserListSoapIn" />
+      <wsdl:output message="tns:GetAllUserListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserListDate">
+      <wsdl:input message="tns:GetAllUserListDateSoapIn" />
+      <wsdl:output message="tns:GetAllUserListDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUserProfiles">
+      <wsdl:input message="tns:GetAppUserProfilesSoapIn" />
+      <wsdl:output message="tns:GetAppUserProfilesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationUsers">
+      <wsdl:input message="tns:GetApplicationUsersSoapIn" />
+      <wsdl:output message="tns:GetApplicationUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiSostituti">
+      <wsdl:input message="tns:GetUtentiSostitutiSoapIn" />
+      <wsdl:output message="tns:GetUtentiSostitutiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiSostituitiAppl">
+      <wsdl:input message="tns:GetUtentiSostituitiApplSoapIn" />
+      <wsdl:output message="tns:GetUtentiSostituitiApplSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResponsabiliStrutture">
+      <wsdl:input message="tns:GetResponsabiliStruttureSoapIn" />
+      <wsdl:output message="tns:GetResponsabiliStruttureSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResponsabiliStruttureConDate">
+      <wsdl:input message="tns:GetResponsabiliStruttureConDateSoapIn" />
+      <wsdl:output message="tns:GetResponsabiliStruttureConDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureConDate">
+      <wsdl:input message="tns:GetStruttureConDateSoapIn" />
+      <wsdl:output message="tns:GetStruttureConDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureUtente">
+      <wsdl:input message="tns:GetStruttureUtenteSoapIn" />
+      <wsdl:output message="tns:GetStruttureUtenteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiStruttura">
+      <wsdl:input message="tns:GetUtentiStrutturaSoapIn" />
+      <wsdl:output message="tns:GetUtentiStrutturaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStruttureUtente">
+      <wsdl:input message="tns:GetAllStruttureUtenteSoapIn" />
+      <wsdl:output message="tns:GetAllStruttureUtenteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStruttureUtenteConDate">
+      <wsdl:input message="tns:GetAllStruttureUtenteConDateSoapIn" />
+      <wsdl:output message="tns:GetAllStruttureUtenteConDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureSenzaResponsabile">
+      <wsdl:input message="tns:GetStruttureSenzaResponsabileSoapIn" />
+      <wsdl:output message="tns:GetStruttureSenzaResponsabileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDepAppProfiles">
+      <wsdl:input message="tns:GetUserDepAppProfilesSoapIn" />
+      <wsdl:output message="tns:GetUserDepAppProfilesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtentiStruttura">
+      <wsdl:input message="tns:GetAllUtentiStrutturaSoapIn" />
+      <wsdl:output message="tns:GetAllUtentiStrutturaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtentiInterniStruttura">
+      <wsdl:input message="tns:GetAllUtentiInterniStrutturaSoapIn" />
+      <wsdl:output message="tns:GetAllUtentiInterniStrutturaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtentiInterniStrutturaPerData">
+      <wsdl:input message="tns:GetAllUtentiInterniStrutturaPerDataSoapIn" />
+      <wsdl:output message="tns:GetAllUtentiInterniStrutturaPerDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiPerFunzione">
+      <wsdl:input message="tns:GetUtentiPerFunzioneSoapIn" />
+      <wsdl:output message="tns:GetUtentiPerFunzioneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFunzioniPerUtente">
+      <wsdl:input message="tns:GetFunzioniPerUtenteSoapIn" />
+      <wsdl:output message="tns:GetFunzioniPerUtenteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentePerCodice">
+      <wsdl:input message="tns:GetUtentePerCodiceSoapIn" />
+      <wsdl:output message="tns:GetUtentePerCodiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPosOrgStrutOrg">
+      <wsdl:input message="tns:GetPosOrgStrutOrgSoapIn" />
+      <wsdl:output message="tns:GetPosOrgStrutOrgSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStrutture">
+      <wsdl:input message="tns:GetAllStruttureSoapIn" />
+      <wsdl:output message="tns:GetAllStruttureSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStrutture_Tutte">
+      <wsdl:input message="tns:GetAllStrutture_TutteSoapIn" />
+      <wsdl:output message="tns:GetAllStrutture_TutteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUffici">
+      <wsdl:input message="tns:GetAllUfficiSoapIn" />
+      <wsdl:output message="tns:GetAllUfficiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSedeUtentePerCodice">
+      <wsdl:input message="tns:GetSedeUtentePerCodiceSoapIn" />
+      <wsdl:output message="tns:GetSedeUtentePerCodiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSottopostiDaResponsabile">
+      <wsdl:input message="tns:GetSottopostiDaResponsabileSoapIn" />
+      <wsdl:output message="tns:GetSottopostiDaResponsabileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSedi">
+      <wsdl:input message="tns:GetAllSediSoapIn" />
+      <wsdl:output message="tns:GetAllSediSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureSede">
+      <wsdl:input message="tns:GetStruttureSedeSoapIn" />
+      <wsdl:output message="tns:GetStruttureSedeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStruttureResponsabile">
+      <wsdl:input message="tns:GetAllStruttureResponsabileSoapIn" />
+      <wsdl:output message="tns:GetAllStruttureResponsabileSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GsoWebServicesHttpGet">
+    <wsdl:operation name="Logon">
+      <wsdl:input message="tns:LogonHttpGetIn" />
+      <wsdl:output message="tns:LogonHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationList">
+      <wsdl:input message="tns:GetApplicationListHttpGetIn" />
+      <wsdl:output message="tns:GetApplicationListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserList">
+      <wsdl:input message="tns:GetUserListHttpGetIn" />
+      <wsdl:output message="tns:GetUserListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserList">
+      <wsdl:input message="tns:GetAllUserListHttpGetIn" />
+      <wsdl:output message="tns:GetAllUserListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserListDate">
+      <wsdl:input message="tns:GetAllUserListDateHttpGetIn" />
+      <wsdl:output message="tns:GetAllUserListDateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUserProfiles">
+      <wsdl:input message="tns:GetAppUserProfilesHttpGetIn" />
+      <wsdl:output message="tns:GetAppUserProfilesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationUsers">
+      <wsdl:input message="tns:GetApplicationUsersHttpGetIn" />
+      <wsdl:output message="tns:GetApplicationUsersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiSostituti">
+      <wsdl:input message="tns:GetUtentiSostitutiHttpGetIn" />
+      <wsdl:output message="tns:GetUtentiSostitutiHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiSostituitiAppl">
+      <wsdl:input message="tns:GetUtentiSostituitiApplHttpGetIn" />
+      <wsdl:output message="tns:GetUtentiSostituitiApplHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResponsabiliStrutture">
+      <wsdl:input message="tns:GetResponsabiliStruttureHttpGetIn" />
+      <wsdl:output message="tns:GetResponsabiliStruttureHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResponsabiliStruttureConDate">
+      <wsdl:input message="tns:GetResponsabiliStruttureConDateHttpGetIn" />
+      <wsdl:output message="tns:GetResponsabiliStruttureConDateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureConDate">
+      <wsdl:input message="tns:GetStruttureConDateHttpGetIn" />
+      <wsdl:output message="tns:GetStruttureConDateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureUtente">
+      <wsdl:input message="tns:GetStruttureUtenteHttpGetIn" />
+      <wsdl:output message="tns:GetStruttureUtenteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiStruttura">
+      <wsdl:input message="tns:GetUtentiStrutturaHttpGetIn" />
+      <wsdl:output message="tns:GetUtentiStrutturaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStruttureUtente">
+      <wsdl:input message="tns:GetAllStruttureUtenteHttpGetIn" />
+      <wsdl:output message="tns:GetAllStruttureUtenteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStruttureUtenteConDate">
+      <wsdl:input message="tns:GetAllStruttureUtenteConDateHttpGetIn" />
+      <wsdl:output message="tns:GetAllStruttureUtenteConDateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureSenzaResponsabile">
+      <wsdl:input message="tns:GetStruttureSenzaResponsabileHttpGetIn" />
+      <wsdl:output message="tns:GetStruttureSenzaResponsabileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDepAppProfiles">
+      <wsdl:input message="tns:GetUserDepAppProfilesHttpGetIn" />
+      <wsdl:output message="tns:GetUserDepAppProfilesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtentiStruttura">
+      <wsdl:input message="tns:GetAllUtentiStrutturaHttpGetIn" />
+      <wsdl:output message="tns:GetAllUtentiStrutturaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtentiInterniStruttura">
+      <wsdl:input message="tns:GetAllUtentiInterniStrutturaHttpGetIn" />
+      <wsdl:output message="tns:GetAllUtentiInterniStrutturaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtentiInterniStrutturaPerData">
+      <wsdl:input message="tns:GetAllUtentiInterniStrutturaPerDataHttpGetIn" />
+      <wsdl:output message="tns:GetAllUtentiInterniStrutturaPerDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiPerFunzione">
+      <wsdl:input message="tns:GetUtentiPerFunzioneHttpGetIn" />
+      <wsdl:output message="tns:GetUtentiPerFunzioneHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFunzioniPerUtente">
+      <wsdl:input message="tns:GetFunzioniPerUtenteHttpGetIn" />
+      <wsdl:output message="tns:GetFunzioniPerUtenteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentePerCodice">
+      <wsdl:input message="tns:GetUtentePerCodiceHttpGetIn" />
+      <wsdl:output message="tns:GetUtentePerCodiceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPosOrgStrutOrg">
+      <wsdl:input message="tns:GetPosOrgStrutOrgHttpGetIn" />
+      <wsdl:output message="tns:GetPosOrgStrutOrgHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStrutture">
+      <wsdl:input message="tns:GetAllStruttureHttpGetIn" />
+      <wsdl:output message="tns:GetAllStruttureHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStrutture_Tutte">
+      <wsdl:input message="tns:GetAllStrutture_TutteHttpGetIn" />
+      <wsdl:output message="tns:GetAllStrutture_TutteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUffici">
+      <wsdl:input message="tns:GetAllUfficiHttpGetIn" />
+      <wsdl:output message="tns:GetAllUfficiHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSedeUtentePerCodice">
+      <wsdl:input message="tns:GetSedeUtentePerCodiceHttpGetIn" />
+      <wsdl:output message="tns:GetSedeUtentePerCodiceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSottopostiDaResponsabile">
+      <wsdl:input message="tns:GetSottopostiDaResponsabileHttpGetIn" />
+      <wsdl:output message="tns:GetSottopostiDaResponsabileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSedi">
+      <wsdl:input message="tns:GetAllSediHttpGetIn" />
+      <wsdl:output message="tns:GetAllSediHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureSede">
+      <wsdl:input message="tns:GetStruttureSedeHttpGetIn" />
+      <wsdl:output message="tns:GetStruttureSedeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStruttureResponsabile">
+      <wsdl:input message="tns:GetAllStruttureResponsabileHttpGetIn" />
+      <wsdl:output message="tns:GetAllStruttureResponsabileHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GsoWebServicesHttpPost">
+    <wsdl:operation name="Logon">
+      <wsdl:input message="tns:LogonHttpPostIn" />
+      <wsdl:output message="tns:LogonHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationList">
+      <wsdl:input message="tns:GetApplicationListHttpPostIn" />
+      <wsdl:output message="tns:GetApplicationListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserList">
+      <wsdl:input message="tns:GetUserListHttpPostIn" />
+      <wsdl:output message="tns:GetUserListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserList">
+      <wsdl:input message="tns:GetAllUserListHttpPostIn" />
+      <wsdl:output message="tns:GetAllUserListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserListDate">
+      <wsdl:input message="tns:GetAllUserListDateHttpPostIn" />
+      <wsdl:output message="tns:GetAllUserListDateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUserProfiles">
+      <wsdl:input message="tns:GetAppUserProfilesHttpPostIn" />
+      <wsdl:output message="tns:GetAppUserProfilesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationUsers">
+      <wsdl:input message="tns:GetApplicationUsersHttpPostIn" />
+      <wsdl:output message="tns:GetApplicationUsersHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiSostituti">
+      <wsdl:input message="tns:GetUtentiSostitutiHttpPostIn" />
+      <wsdl:output message="tns:GetUtentiSostitutiHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiSostituitiAppl">
+      <wsdl:input message="tns:GetUtentiSostituitiApplHttpPostIn" />
+      <wsdl:output message="tns:GetUtentiSostituitiApplHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResponsabiliStrutture">
+      <wsdl:input message="tns:GetResponsabiliStruttureHttpPostIn" />
+      <wsdl:output message="tns:GetResponsabiliStruttureHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResponsabiliStruttureConDate">
+      <wsdl:input message="tns:GetResponsabiliStruttureConDateHttpPostIn" />
+      <wsdl:output message="tns:GetResponsabiliStruttureConDateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureConDate">
+      <wsdl:input message="tns:GetStruttureConDateHttpPostIn" />
+      <wsdl:output message="tns:GetStruttureConDateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureUtente">
+      <wsdl:input message="tns:GetStruttureUtenteHttpPostIn" />
+      <wsdl:output message="tns:GetStruttureUtenteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiStruttura">
+      <wsdl:input message="tns:GetUtentiStrutturaHttpPostIn" />
+      <wsdl:output message="tns:GetUtentiStrutturaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStruttureUtente">
+      <wsdl:input message="tns:GetAllStruttureUtenteHttpPostIn" />
+      <wsdl:output message="tns:GetAllStruttureUtenteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStruttureUtenteConDate">
+      <wsdl:input message="tns:GetAllStruttureUtenteConDateHttpPostIn" />
+      <wsdl:output message="tns:GetAllStruttureUtenteConDateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureSenzaResponsabile">
+      <wsdl:input message="tns:GetStruttureSenzaResponsabileHttpPostIn" />
+      <wsdl:output message="tns:GetStruttureSenzaResponsabileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDepAppProfiles">
+      <wsdl:input message="tns:GetUserDepAppProfilesHttpPostIn" />
+      <wsdl:output message="tns:GetUserDepAppProfilesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtentiStruttura">
+      <wsdl:input message="tns:GetAllUtentiStrutturaHttpPostIn" />
+      <wsdl:output message="tns:GetAllUtentiStrutturaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtentiInterniStruttura">
+      <wsdl:input message="tns:GetAllUtentiInterniStrutturaHttpPostIn" />
+      <wsdl:output message="tns:GetAllUtentiInterniStrutturaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtentiInterniStrutturaPerData">
+      <wsdl:input message="tns:GetAllUtentiInterniStrutturaPerDataHttpPostIn" />
+      <wsdl:output message="tns:GetAllUtentiInterniStrutturaPerDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiPerFunzione">
+      <wsdl:input message="tns:GetUtentiPerFunzioneHttpPostIn" />
+      <wsdl:output message="tns:GetUtentiPerFunzioneHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFunzioniPerUtente">
+      <wsdl:input message="tns:GetFunzioniPerUtenteHttpPostIn" />
+      <wsdl:output message="tns:GetFunzioniPerUtenteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentePerCodice">
+      <wsdl:input message="tns:GetUtentePerCodiceHttpPostIn" />
+      <wsdl:output message="tns:GetUtentePerCodiceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPosOrgStrutOrg">
+      <wsdl:input message="tns:GetPosOrgStrutOrgHttpPostIn" />
+      <wsdl:output message="tns:GetPosOrgStrutOrgHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStrutture">
+      <wsdl:input message="tns:GetAllStruttureHttpPostIn" />
+      <wsdl:output message="tns:GetAllStruttureHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStrutture_Tutte">
+      <wsdl:input message="tns:GetAllStrutture_TutteHttpPostIn" />
+      <wsdl:output message="tns:GetAllStrutture_TutteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUffici">
+      <wsdl:input message="tns:GetAllUfficiHttpPostIn" />
+      <wsdl:output message="tns:GetAllUfficiHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSedeUtentePerCodice">
+      <wsdl:input message="tns:GetSedeUtentePerCodiceHttpPostIn" />
+      <wsdl:output message="tns:GetSedeUtentePerCodiceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSottopostiDaResponsabile">
+      <wsdl:input message="tns:GetSottopostiDaResponsabileHttpPostIn" />
+      <wsdl:output message="tns:GetSottopostiDaResponsabileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSedi">
+      <wsdl:input message="tns:GetAllSediHttpPostIn" />
+      <wsdl:output message="tns:GetAllSediHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureSede">
+      <wsdl:input message="tns:GetStruttureSedeHttpPostIn" />
+      <wsdl:output message="tns:GetStruttureSedeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStruttureResponsabile">
+      <wsdl:input message="tns:GetAllStruttureResponsabileHttpPostIn" />
+      <wsdl:output message="tns:GetAllStruttureResponsabileHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GsoWebServicesSoap" type="tns:GsoWebServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Logon">
+      <soap:operation soapAction="http://tempuri.org/Logon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationList">
+      <soap:operation soapAction="http://tempuri.org/GetApplicationList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserList">
+      <soap:operation soapAction="http://tempuri.org/GetUserList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserList">
+      <soap:operation soapAction="http://tempuri.org/GetAllUserList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserListDate">
+      <soap:operation soapAction="http://tempuri.org/GetAllUserListDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUserProfiles">
+      <soap:operation soapAction="http://tempuri.org/GetAppUserProfiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationUsers">
+      <soap:operation soapAction="http://tempuri.org/GetApplicationUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiSostituti">
+      <soap:operation soapAction="http://tempuri.org/GetUtentiSostituti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiSostituitiAppl">
+      <soap:operation soapAction="http://tempuri.org/GetUtentiSostituitiAppl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResponsabiliStrutture">
+      <soap:operation soapAction="http://tempuri.org/GetResponsabiliStrutture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResponsabiliStruttureConDate">
+      <soap:operation soapAction="http://tempuri.org/GetResponsabiliStruttureConDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureConDate">
+      <soap:operation soapAction="http://tempuri.org/GetStruttureConDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureUtente">
+      <soap:operation soapAction="http://tempuri.org/GetStruttureUtente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiStruttura">
+      <soap:operation soapAction="http://tempuri.org/GetUtentiStruttura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStruttureUtente">
+      <soap:operation soapAction="http://tempuri.org/GetAllStruttureUtente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStruttureUtenteConDate">
+      <soap:operation soapAction="http://tempuri.org/GetAllStruttureUtenteConDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureSenzaResponsabile">
+      <soap:operation soapAction="http://tempuri.org/GetStruttureSenzaResponsabile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDepAppProfiles">
+      <soap:operation soapAction="http://tempuri.org/GetUserDepAppProfiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtentiStruttura">
+      <soap:operation soapAction="http://tempuri.org/GetAllUtentiStruttura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtentiInterniStruttura">
+      <soap:operation soapAction="http://tempuri.org/GetAllUtentiInterniStruttura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtentiInterniStrutturaPerData">
+      <soap:operation soapAction="http://tempuri.org/GetAllUtentiInterniStrutturaPerData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiPerFunzione">
+      <soap:operation soapAction="http://tempuri.org/GetUtentiPerFunzione" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFunzioniPerUtente">
+      <soap:operation soapAction="http://tempuri.org/GetFunzioniPerUtente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentePerCodice">
+      <soap:operation soapAction="http://tempuri.org/GetUtentePerCodice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPosOrgStrutOrg">
+      <soap:operation soapAction="http://tempuri.org/GetPosOrgStrutOrg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStrutture">
+      <soap:operation soapAction="http://tempuri.org/GetAllStrutture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStrutture_Tutte">
+      <soap:operation soapAction="http://tempuri.org/GetAllStrutture_Tutte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUffici">
+      <soap:operation soapAction="http://tempuri.org/GetAllUffici" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSedeUtentePerCodice">
+      <soap:operation soapAction="http://tempuri.org/GetSedeUtentePerCodice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSottopostiDaResponsabile">
+      <soap:operation soapAction="http://tempuri.org/GetSottopostiDaResponsabile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSedi">
+      <soap:operation soapAction="http://tempuri.org/GetAllSedi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureSede">
+      <soap:operation soapAction="http://tempuri.org/GetStruttureSede" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStruttureResponsabile">
+      <soap:operation soapAction="http://tempuri.org/GetAllStruttureResponsabile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GsoWebServicesSoap12" type="tns:GsoWebServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Logon">
+      <soap12:operation soapAction="http://tempuri.org/Logon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationList">
+      <soap12:operation soapAction="http://tempuri.org/GetApplicationList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserList">
+      <soap12:operation soapAction="http://tempuri.org/GetUserList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserList">
+      <soap12:operation soapAction="http://tempuri.org/GetAllUserList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserListDate">
+      <soap12:operation soapAction="http://tempuri.org/GetAllUserListDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUserProfiles">
+      <soap12:operation soapAction="http://tempuri.org/GetAppUserProfiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationUsers">
+      <soap12:operation soapAction="http://tempuri.org/GetApplicationUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiSostituti">
+      <soap12:operation soapAction="http://tempuri.org/GetUtentiSostituti" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiSostituitiAppl">
+      <soap12:operation soapAction="http://tempuri.org/GetUtentiSostituitiAppl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResponsabiliStrutture">
+      <soap12:operation soapAction="http://tempuri.org/GetResponsabiliStrutture" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResponsabiliStruttureConDate">
+      <soap12:operation soapAction="http://tempuri.org/GetResponsabiliStruttureConDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureConDate">
+      <soap12:operation soapAction="http://tempuri.org/GetStruttureConDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureUtente">
+      <soap12:operation soapAction="http://tempuri.org/GetStruttureUtente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiStruttura">
+      <soap12:operation soapAction="http://tempuri.org/GetUtentiStruttura" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStruttureUtente">
+      <soap12:operation soapAction="http://tempuri.org/GetAllStruttureUtente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStruttureUtenteConDate">
+      <soap12:operation soapAction="http://tempuri.org/GetAllStruttureUtenteConDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureSenzaResponsabile">
+      <soap12:operation soapAction="http://tempuri.org/GetStruttureSenzaResponsabile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDepAppProfiles">
+      <soap12:operation soapAction="http://tempuri.org/GetUserDepAppProfiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtentiStruttura">
+      <soap12:operation soapAction="http://tempuri.org/GetAllUtentiStruttura" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtentiInterniStruttura">
+      <soap12:operation soapAction="http://tempuri.org/GetAllUtentiInterniStruttura" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtentiInterniStrutturaPerData">
+      <soap12:operation soapAction="http://tempuri.org/GetAllUtentiInterniStrutturaPerData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiPerFunzione">
+      <soap12:operation soapAction="http://tempuri.org/GetUtentiPerFunzione" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFunzioniPerUtente">
+      <soap12:operation soapAction="http://tempuri.org/GetFunzioniPerUtente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentePerCodice">
+      <soap12:operation soapAction="http://tempuri.org/GetUtentePerCodice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPosOrgStrutOrg">
+      <soap12:operation soapAction="http://tempuri.org/GetPosOrgStrutOrg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStrutture">
+      <soap12:operation soapAction="http://tempuri.org/GetAllStrutture" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStrutture_Tutte">
+      <soap12:operation soapAction="http://tempuri.org/GetAllStrutture_Tutte" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUffici">
+      <soap12:operation soapAction="http://tempuri.org/GetAllUffici" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSedeUtentePerCodice">
+      <soap12:operation soapAction="http://tempuri.org/GetSedeUtentePerCodice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSottopostiDaResponsabile">
+      <soap12:operation soapAction="http://tempuri.org/GetSottopostiDaResponsabile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSedi">
+      <soap12:operation soapAction="http://tempuri.org/GetAllSedi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureSede">
+      <soap12:operation soapAction="http://tempuri.org/GetStruttureSede" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStruttureResponsabile">
+      <soap12:operation soapAction="http://tempuri.org/GetAllStruttureResponsabile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GsoWebServicesHttpGet" type="tns:GsoWebServicesHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Logon">
+      <http:operation location="/Logon" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationList">
+      <http:operation location="/GetApplicationList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserList">
+      <http:operation location="/GetUserList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserList">
+      <http:operation location="/GetAllUserList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserListDate">
+      <http:operation location="/GetAllUserListDate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUserProfiles">
+      <http:operation location="/GetAppUserProfiles" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationUsers">
+      <http:operation location="/GetApplicationUsers" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiSostituti">
+      <http:operation location="/GetUtentiSostituti" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiSostituitiAppl">
+      <http:operation location="/GetUtentiSostituitiAppl" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResponsabiliStrutture">
+      <http:operation location="/GetResponsabiliStrutture" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResponsabiliStruttureConDate">
+      <http:operation location="/GetResponsabiliStruttureConDate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureConDate">
+      <http:operation location="/GetStruttureConDate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureUtente">
+      <http:operation location="/GetStruttureUtente" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiStruttura">
+      <http:operation location="/GetUtentiStruttura" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStruttureUtente">
+      <http:operation location="/GetAllStruttureUtente" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStruttureUtenteConDate">
+      <http:operation location="/GetAllStruttureUtenteConDate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureSenzaResponsabile">
+      <http:operation location="/GetStruttureSenzaResponsabile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDepAppProfiles">
+      <http:operation location="/GetUserDepAppProfiles" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtentiStruttura">
+      <http:operation location="/GetAllUtentiStruttura" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtentiInterniStruttura">
+      <http:operation location="/GetAllUtentiInterniStruttura" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtentiInterniStrutturaPerData">
+      <http:operation location="/GetAllUtentiInterniStrutturaPerData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiPerFunzione">
+      <http:operation location="/GetUtentiPerFunzione" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFunzioniPerUtente">
+      <http:operation location="/GetFunzioniPerUtente" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentePerCodice">
+      <http:operation location="/GetUtentePerCodice" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPosOrgStrutOrg">
+      <http:operation location="/GetPosOrgStrutOrg" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStrutture">
+      <http:operation location="/GetAllStrutture" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStrutture_Tutte">
+      <http:operation location="/GetAllStrutture_Tutte" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUffici">
+      <http:operation location="/GetAllUffici" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSedeUtentePerCodice">
+      <http:operation location="/GetSedeUtentePerCodice" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSottopostiDaResponsabile">
+      <http:operation location="/GetSottopostiDaResponsabile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSedi">
+      <http:operation location="/GetAllSedi" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureSede">
+      <http:operation location="/GetStruttureSede" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStruttureResponsabile">
+      <http:operation location="/GetAllStruttureResponsabile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GsoWebServicesHttpPost" type="tns:GsoWebServicesHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Logon">
+      <http:operation location="/Logon" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationList">
+      <http:operation location="/GetApplicationList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserList">
+      <http:operation location="/GetUserList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserList">
+      <http:operation location="/GetAllUserList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserListDate">
+      <http:operation location="/GetAllUserListDate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUserProfiles">
+      <http:operation location="/GetAppUserProfiles" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationUsers">
+      <http:operation location="/GetApplicationUsers" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiSostituti">
+      <http:operation location="/GetUtentiSostituti" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiSostituitiAppl">
+      <http:operation location="/GetUtentiSostituitiAppl" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResponsabiliStrutture">
+      <http:operation location="/GetResponsabiliStrutture" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResponsabiliStruttureConDate">
+      <http:operation location="/GetResponsabiliStruttureConDate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureConDate">
+      <http:operation location="/GetStruttureConDate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureUtente">
+      <http:operation location="/GetStruttureUtente" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiStruttura">
+      <http:operation location="/GetUtentiStruttura" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStruttureUtente">
+      <http:operation location="/GetAllStruttureUtente" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStruttureUtenteConDate">
+      <http:operation location="/GetAllStruttureUtenteConDate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureSenzaResponsabile">
+      <http:operation location="/GetStruttureSenzaResponsabile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDepAppProfiles">
+      <http:operation location="/GetUserDepAppProfiles" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtentiStruttura">
+      <http:operation location="/GetAllUtentiStruttura" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtentiInterniStruttura">
+      <http:operation location="/GetAllUtentiInterniStruttura" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUtentiInterniStrutturaPerData">
+      <http:operation location="/GetAllUtentiInterniStrutturaPerData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentiPerFunzione">
+      <http:operation location="/GetUtentiPerFunzione" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFunzioniPerUtente">
+      <http:operation location="/GetFunzioniPerUtente" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtentePerCodice">
+      <http:operation location="/GetUtentePerCodice" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPosOrgStrutOrg">
+      <http:operation location="/GetPosOrgStrutOrg" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStrutture">
+      <http:operation location="/GetAllStrutture" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStrutture_Tutte">
+      <http:operation location="/GetAllStrutture_Tutte" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUffici">
+      <http:operation location="/GetAllUffici" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSedeUtentePerCodice">
+      <http:operation location="/GetSedeUtentePerCodice" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSottopostiDaResponsabile">
+      <http:operation location="/GetSottopostiDaResponsabile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSedi">
+      <http:operation location="/GetAllSedi" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStruttureSede">
+      <http:operation location="/GetStruttureSede" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStruttureResponsabile">
+      <http:operation location="/GetAllStruttureResponsabile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GsoWebServices">
+    <wsdl:port name="GsoWebServicesSoap" binding="tns:GsoWebServicesSoap">
+      <soap:address location="http://localhost/gso/ws/gso.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GsoWebServicesSoap12" binding="tns:GsoWebServicesSoap12">
+      <soap12:address location="http://localhost/gso/ws/gso.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GsoWebServicesHttpGet" binding="tns:GsoWebServicesHttpGet">
+      <http:address location="http://localhost/gso/ws/gso.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GsoWebServicesHttpPost" binding="tns:GsoWebServicesHttpPost">
+      <http:address location="http://localhost/gso/ws/gso.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
